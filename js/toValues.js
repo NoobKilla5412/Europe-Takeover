@@ -30,141 +30,164 @@ const oneOctovigintillion = 10 ** 87
 const oneNovemvigintillion = 10 ** 90
 const oneTrigintillion = 10 ** 93
 const oneALOT = 10 ** 96
-function toValues(upgradeCost) {
-  if (upgradeCost >= oneALOT) {
-    return Math.round(100 * (upgradeCost / oneALOT)) / 100 + 'A LOT'
-  } else if (upgradeCost >= oneTrigintillion) {
-    return Math.round(100 * (upgradeCost / oneTrigintillion)) / 100 + 'TG'
-  } else if (upgradeCost >= oneNovemvigintillion) {
-    return Math.round(100 * (upgradeCost / oneNovemvigintillion)) / 100 + 'NV'
-  } else if (upgradeCost >= oneOctovigintillion) {
-    return Math.round(100 * (upgradeCost / oneOctovigintillion)) / 100 + 'OV'
-  } else if (upgradeCost >= oneSeptenvigintillion) {
-    return Math.round(100 * (upgradeCost / oneSeptenvigintillion)) / 100 + 'SV'
-  } else if (upgradeCost >= oneSesvigintillion) {
-    return Math.round(100 * (upgradeCost / oneSesvigintillion)) / 100 + 'sV'
-  } else if (upgradeCost >= oneQuinvigintillion) {
-    return Math.round(100 * (upgradeCost / oneQuinvigintillion)) / 100 + 'QV'
-  } else if (upgradeCost >= oneQuattuorvigintillion) {
-    return Math.round(100 * (upgradeCost / oneQuattuorvigintillion)) / 100 + 'qV'
-  } else if (upgradeCost >= oneTresvigintillion) {
-    return Math.round(100 * (upgradeCost / oneTresvigintillion)) / 100 + 'tV'
-  } else if (upgradeCost >= oneDuovigintillion) {
-    return Math.round(100 * (upgradeCost / oneDuovigintillion)) / 100 + 'dV'
-  } else if (upgradeCost >= oneUnvigintillion) {
-    return Math.round(100 * (upgradeCost / oneUnvigintillion)) / 100 + 'uV'
-  } else if (upgradeCost >= oneVigintillion) {
-    return Math.round(100 * (upgradeCost / oneVigintillion)) / 100 + 'V'
-  } else if (upgradeCost >= oneNovemdecillion) {
-    return Math.round(100 * (upgradeCost / oneNovemdecillion)) / 100 + 'Nd'
-  } else if (upgradeCost >= oneOctodecillion) {
-    return Math.round(100 * (upgradeCost / oneOctodecillion)) / 100 + 'Od'
-  } else if (upgradeCost >= oneSeptendecillion) {
-    return Math.round(100 * (upgradeCost / oneSeptendecillion)) / 100 + 'Sd'
-  } else if (upgradeCost >= oneSexdecillion) {
-    return Math.round(100 * (upgradeCost / oneSexdecillion)) / 100 + 'sd'
-  } else if (upgradeCost >= oneQuindecillion) {
-    return Math.round(100 * (upgradeCost / oneQuindecillion)) / 100 + 'Qd'
-  } else if (upgradeCost >= oneQuattuordecillion) {
-    return Math.round(100 * (upgradeCost / oneQuattuordecillion)) / 100 + 'qd'
-  } else if (upgradeCost >= oneTredecillion) {
-    return Math.round(100 * (upgradeCost / oneTredecillion)) / 100 + 'Td'
-  } else if (upgradeCost >= oneDuodecillion) {
-    return Math.round(100 * (upgradeCost / oneDuodecillion)) / 100 + 'D'
-  } else if (upgradeCost >= oneUndecillion) {
-    return Math.round(100 * (upgradeCost / oneUndecillion)) / 100 + 'U'
-  } else if (upgradeCost >= oneDecillion) {
-    return Math.round(100 * (upgradeCost / oneDecillion)) / 100 + 'd'
-  } else if (upgradeCost >= oneNonillion) {
-    return Math.round(100 * (upgradeCost / oneNonillion)) / 100 + 'N'
-  } else if (upgradeCost >= oneOctillion) {
-    return Math.round(100 * (upgradeCost / oneOctillion)) / 100 + 'o'
-  } else if (upgradeCost >= oneSeptillion) {
-    return Math.round(100 * (upgradeCost / oneSeptillion)) / 100 + 'S'
-  } else if (upgradeCost >= oneSextillion) {
-    return Math.round(100 * (upgradeCost / oneSextillion)) / 100 + 's'
-  } else if (upgradeCost >= oneQuintillion) {
-    return Math.round(100 * (upgradeCost / oneQuintillion)) / 100 + 'Q'
-  } else if (upgradeCost >= oneQuadrillion) {
-    return Math.round(100 * (upgradeCost / oneQuadrillion)) / 100 + 'q'
-  } else if (upgradeCost >= oneTrillion) {
-    return Math.round(100 * (upgradeCost / oneTrillion)) / 100 + 'T'
-  } else if (upgradeCost >= oneBillion) {
-    return Math.round(100 * (upgradeCost / oneBillion)) / 100 + 'B'
-  } else if (upgradeCost >= oneMillion) {
-    return Math.round(100 * (upgradeCost / oneMillion)) / 100 + 'M'
-  } else if (upgradeCost >= 1000) {
-    return Math.round(100 * (upgradeCost / 1000)) / 100 + 'K'
+
+/**
+ * Change large numbers to readable values
+ * 
+ * ex.
+ * 
+ * 100Td
+ * 
+ * 24T
+ * @param {*} value The value to add the value to
+ * @returns A string of the money value
+ */
+function toValues(value) {
+  if (value >= oneALOT) {
+    return Math.round(100 * (value / oneALOT)) / 100 + 'A LOT'
+  } else if (value >= oneTrigintillion) {
+    return Math.round(100 * (value / oneTrigintillion)) / 100 + 'TG'
+  } else if (value >= oneNovemvigintillion) {
+    return Math.round(100 * (value / oneNovemvigintillion)) / 100 + 'NV'
+  } else if (value >= oneOctovigintillion) {
+    return Math.round(100 * (value / oneOctovigintillion)) / 100 + 'OV'
+  } else if (value >= oneSeptenvigintillion) {
+    return Math.round(100 * (value / oneSeptenvigintillion)) / 100 + 'SV'
+  } else if (value >= oneSesvigintillion) {
+    return Math.round(100 * (value / oneSesvigintillion)) / 100 + 'sV'
+  } else if (value >= oneQuinvigintillion) {
+    return Math.round(100 * (value / oneQuinvigintillion)) / 100 + 'QV'
+  } else if (value >= oneQuattuorvigintillion) {
+    return Math.round(100 * (value / oneQuattuorvigintillion)) / 100 + 'qV'
+  } else if (value >= oneTresvigintillion) {
+    return Math.round(100 * (value / oneTresvigintillion)) / 100 + 'tV'
+  } else if (value >= oneDuovigintillion) {
+    return Math.round(100 * (value / oneDuovigintillion)) / 100 + 'dV'
+  } else if (value >= oneUnvigintillion) {
+    return Math.round(100 * (value / oneUnvigintillion)) / 100 + 'uV'
+  } else if (value >= oneVigintillion) {
+    return Math.round(100 * (value / oneVigintillion)) / 100 + 'V'
+  } else if (value >= oneNovemdecillion) {
+    return Math.round(100 * (value / oneNovemdecillion)) / 100 + 'Nd'
+  } else if (value >= oneOctodecillion) {
+    return Math.round(100 * (value / oneOctodecillion)) / 100 + 'Od'
+  } else if (value >= oneSeptendecillion) {
+    return Math.round(100 * (value / oneSeptendecillion)) / 100 + 'Sd'
+  } else if (value >= oneSexdecillion) {
+    return Math.round(100 * (value / oneSexdecillion)) / 100 + 'sd'
+  } else if (value >= oneQuindecillion) {
+    return Math.round(100 * (value / oneQuindecillion)) / 100 + 'Qd'
+  } else if (value >= oneQuattuordecillion) {
+    return Math.round(100 * (value / oneQuattuordecillion)) / 100 + 'qd'
+  } else if (value >= oneTredecillion) {
+    return Math.round(100 * (value / oneTredecillion)) / 100 + 'Td'
+  } else if (value >= oneDuodecillion) {
+    return Math.round(100 * (value / oneDuodecillion)) / 100 + 'D'
+  } else if (value >= oneUndecillion) {
+    return Math.round(100 * (value / oneUndecillion)) / 100 + 'U'
+  } else if (value >= oneDecillion) {
+    return Math.round(100 * (value / oneDecillion)) / 100 + 'd'
+  } else if (value >= oneNonillion) {
+    return Math.round(100 * (value / oneNonillion)) / 100 + 'N'
+  } else if (value >= oneOctillion) {
+    return Math.round(100 * (value / oneOctillion)) / 100 + 'o'
+  } else if (value >= oneSeptillion) {
+    return Math.round(100 * (value / oneSeptillion)) / 100 + 'S'
+  } else if (value >= oneSextillion) {
+    return Math.round(100 * (value / oneSextillion)) / 100 + 's'
+  } else if (value >= oneQuintillion) {
+    return Math.round(100 * (value / oneQuintillion)) / 100 + 'Q'
+  } else if (value >= oneQuadrillion) {
+    return Math.round(100 * (value / oneQuadrillion)) / 100 + 'q'
+  } else if (value >= oneTrillion) {
+    return Math.round(100 * (value / oneTrillion)) / 100 + 'T'
+  } else if (value >= oneBillion) {
+    return Math.round(100 * (value / oneBillion)) / 100 + 'B'
+  } else if (value >= oneMillion) {
+    return Math.round(100 * (value / oneMillion)) / 100 + 'M'
+  } else if (value >= 1000) {
+    return Math.round(100 * (value / 1000)) / 100 + 'K'
   } else {
-    return Math.round(100 * (upgradeCost)) / 100
+    return Math.round(100 * (value)) / 100
   }
 }
-function toValuesExt(upgradeCost) {
-  if (upgradeCost >= oneALOT) {
-    return Math.round(100 * (upgradeCost / oneALOT)) / 100 + ' A LOT'
-  } else if (upgradeCost >= oneTrigintillion) {
-    return Math.round(100 * (upgradeCost / oneTrigintillion)) / 100 + ' Trigintillion'
-  } else if (upgradeCost >= oneNovemvigintillion) {
-    return Math.round(100 * (upgradeCost / oneNovemvigintillion)) / 100 + ' Novemvigintillion'
-  } else if (upgradeCost >= oneOctovigintillion) {
-    return Math.round(100 * (upgradeCost / oneOctovigintillion)) / 100 + ' Octovigintillion'
-  } else if (upgradeCost >= oneSeptenvigintillion) {
-    return Math.round(100 * (upgradeCost / oneSeptenvigintillion)) / 100 + ' Septenvigintillion'
-  } else if (upgradeCost >= oneSesvigintillion) {
-    return Math.round(100 * (upgradeCost / oneSesvigintillion)) / 100 + ' Sesvigintillion'
-  } else if (upgradeCost >= oneQuinvigintillion) {
-    return Math.round(100 * (upgradeCost / oneQuinvigintillion)) / 100 + ' Quinvigintillion'
-  } else if (upgradeCost >= oneQuattuorvigintillion) {
-    return Math.round(100 * (upgradeCost / oneQuattuorvigintillion)) / 100 + ' Quattuorvigintillion'
-  } else if (upgradeCost >= oneTresvigintillion) {
-    return Math.round(100 * (upgradeCost / oneTresvigintillion)) / 100 + ' Tresvigintillion'
-  } else if (upgradeCost >= oneDuovigintillion) {
-    return Math.round(100 * (upgradeCost / oneDuovigintillion)) / 100 + ' Duovigintillion'
-  } else if (upgradeCost >= oneUnvigintillion) {
-    return Math.round(100 * (upgradeCost / oneUnvigintillion)) / 100 + ' Unvigintillion'
-  } else if (upgradeCost >= oneVigintillion) {
-    return Math.round(100 * (upgradeCost / oneVigintillion)) / 100 + ' Vigintillion'
-  } else if (upgradeCost >= oneNovemdecillion) {
-    return Math.round(100 * (upgradeCost / oneNovemdecillion)) / 100 + ' Novemdecillion'
-  } else if (upgradeCost >= oneOctodecillion) {
-    return Math.round(100 * (upgradeCost / oneOctodecillion)) / 100 + ' Octodecillion'
-  } else if (upgradeCost >= oneSeptendecillion) {
-    return Math.round(100 * (upgradeCost / oneSeptendecillion)) / 100 + ' Septendecillion'
-  } else if (upgradeCost >= oneSexdecillion) {
-    return Math.round(100 * (upgradeCost / oneSexdecillion)) / 100 + ' Sexdecillion'
-  } else if (upgradeCost >= oneQuindecillion) {
-    return Math.round(100 * (upgradeCost / oneQuindecillion)) / 100 + ' Quindecillion'
-  } else if (upgradeCost >= oneQuattuordecillion) {
-    return Math.round(100 * (upgradeCost / oneQuattuordecillion)) / 100 + ' Quattuordecillion'
-  } else if (upgradeCost >= oneTredecillion) {
-    return Math.round(100 * (upgradeCost / oneTredecillion)) / 100 + ' Tredecillion'
-  } else if (upgradeCost >= oneDuodecillion) {
-    return Math.round(100 * (upgradeCost / oneDuodecillion)) / 100 + ' Duodecillion'
-  } else if (upgradeCost >= oneUndecillion) {
-    return Math.round(100 * (upgradeCost / oneUndecillion)) / 100 + ' Undecillion'
-  } else if (upgradeCost >= oneDecillion) {
-    return Math.round(100 * (upgradeCost / oneDecillion)) / 100 + ' Decillion'
-  } else if (upgradeCost >= oneNonillion) {
-    return Math.round(100 * (upgradeCost / oneNonillion)) / 100 + ' Nonillion'
-  } else if (upgradeCost >= oneOctillion) {
-    return Math.round(100 * (upgradeCost / oneOctillion)) / 100 + ' Octillion'
-  } else if (upgradeCost >= oneSeptillion) {
-    return Math.round(100 * (upgradeCost / oneSeptillion)) / 100 + ' Septillion'
-  } else if (upgradeCost >= oneSextillion) {
-    return Math.round(100 * (upgradeCost / oneSextillion)) / 100 + ' Sextillion'
-  } else if (upgradeCost >= oneQuintillion) {
-    return Math.round(100 * (upgradeCost / oneQuintillion)) / 100 + ' Quintillion'
-  } else if (upgradeCost >= oneQuadrillion) {
-    return Math.round(100 * (upgradeCost / oneQuadrillion)) / 100 + ' Quadrillion'
-  } else if (upgradeCost >= oneTrillion) {
-    return Math.round(100 * (upgradeCost / oneTrillion)) / 100 + ' Trillion'
-  } else if (upgradeCost >= oneBillion) {
-    return Math.round(100 * (upgradeCost / oneBillion)) / 100 + ' Billion'
-  } else if (upgradeCost >= oneMillion) {
-    return Math.round(100 * (upgradeCost / oneMillion)) / 100 + ' Million'
-  } else if (upgradeCost >= 1000) {
-    return Math.round(100 * (upgradeCost / 1000)) / 100 + ' Thousand'
+/**
+ * Change large numbers to readable values and spell out the value
+ * 
+ * ex.
+ * 
+ * 100 Tredecillion
+ * 
+ * 24 Trillion
+ * @param {*} value The value to add the value to
+ * @returns A string of the money value
+ */
+function toValuesExt(value) {
+  if (value >= oneALOT) {
+    return Math.round(100 * (value / oneALOT)) / 100 + ' A LOT'
+  } else if (value >= oneTrigintillion) {
+    return Math.round(100 * (value / oneTrigintillion)) / 100 + ' Trigintillion'
+  } else if (value >= oneNovemvigintillion) {
+    return Math.round(100 * (value / oneNovemvigintillion)) / 100 + ' Novemvigintillion'
+  } else if (value >= oneOctovigintillion) {
+    return Math.round(100 * (value / oneOctovigintillion)) / 100 + ' Octovigintillion'
+  } else if (value >= oneSeptenvigintillion) {
+    return Math.round(100 * (value / oneSeptenvigintillion)) / 100 + ' Septenvigintillion'
+  } else if (value >= oneSesvigintillion) {
+    return Math.round(100 * (value / oneSesvigintillion)) / 100 + ' Sesvigintillion'
+  } else if (value >= oneQuinvigintillion) {
+    return Math.round(100 * (value / oneQuinvigintillion)) / 100 + ' Quinvigintillion'
+  } else if (value >= oneQuattuorvigintillion) {
+    return Math.round(100 * (value / oneQuattuorvigintillion)) / 100 + ' Quattuorvigintillion'
+  } else if (value >= oneTresvigintillion) {
+    return Math.round(100 * (value / oneTresvigintillion)) / 100 + ' Tresvigintillion'
+  } else if (value >= oneDuovigintillion) {
+    return Math.round(100 * (value / oneDuovigintillion)) / 100 + ' Duovigintillion'
+  } else if (value >= oneUnvigintillion) {
+    return Math.round(100 * (value / oneUnvigintillion)) / 100 + ' Unvigintillion'
+  } else if (value >= oneVigintillion) {
+    return Math.round(100 * (value / oneVigintillion)) / 100 + ' Vigintillion'
+  } else if (value >= oneNovemdecillion) {
+    return Math.round(100 * (value / oneNovemdecillion)) / 100 + ' Novemdecillion'
+  } else if (value >= oneOctodecillion) {
+    return Math.round(100 * (value / oneOctodecillion)) / 100 + ' Octodecillion'
+  } else if (value >= oneSeptendecillion) {
+    return Math.round(100 * (value / oneSeptendecillion)) / 100 + ' Septendecillion'
+  } else if (value >= oneSexdecillion) {
+    return Math.round(100 * (value / oneSexdecillion)) / 100 + ' Sexdecillion'
+  } else if (value >= oneQuindecillion) {
+    return Math.round(100 * (value / oneQuindecillion)) / 100 + ' Quindecillion'
+  } else if (value >= oneQuattuordecillion) {
+    return Math.round(100 * (value / oneQuattuordecillion)) / 100 + ' Quattuordecillion'
+  } else if (value >= oneTredecillion) {
+    return Math.round(100 * (value / oneTredecillion)) / 100 + ' Tredecillion'
+  } else if (value >= oneDuodecillion) {
+    return Math.round(100 * (value / oneDuodecillion)) / 100 + ' Duodecillion'
+  } else if (value >= oneUndecillion) {
+    return Math.round(100 * (value / oneUndecillion)) / 100 + ' Undecillion'
+  } else if (value >= oneDecillion) {
+    return Math.round(100 * (value / oneDecillion)) / 100 + ' Decillion'
+  } else if (value >= oneNonillion) {
+    return Math.round(100 * (value / oneNonillion)) / 100 + ' Nonillion'
+  } else if (value >= oneOctillion) {
+    return Math.round(100 * (value / oneOctillion)) / 100 + ' Octillion'
+  } else if (value >= oneSeptillion) {
+    return Math.round(100 * (value / oneSeptillion)) / 100 + ' Septillion'
+  } else if (value >= oneSextillion) {
+    return Math.round(100 * (value / oneSextillion)) / 100 + ' Sextillion'
+  } else if (value >= oneQuintillion) {
+    return Math.round(100 * (value / oneQuintillion)) / 100 + ' Quintillion'
+  } else if (value >= oneQuadrillion) {
+    return Math.round(100 * (value / oneQuadrillion)) / 100 + ' Quadrillion'
+  } else if (value >= oneTrillion) {
+    return Math.round(100 * (value / oneTrillion)) / 100 + ' Trillion'
+  } else if (value >= oneBillion) {
+    return Math.round(100 * (value / oneBillion)) / 100 + ' Billion'
+  } else if (value >= oneMillion) {
+    return Math.round(100 * (value / oneMillion)) / 100 + ' Million'
+  } else if (value >= 1000) {
+    return Math.round(100 * (value / 1000)) / 100 + ' Thousand'
   } else {
-    return Math.round(100 * (upgradeCost)) / 100
+    return Math.round(100 * (value)) / 100
   }
 }
