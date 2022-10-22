@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="output"></div>
+  <script>
+    const chars = [0, 1, 2, 3, 4]//, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+    // let a = 0
+    // let b = chars.length
+    // let c = chars.length
+    // let d = chars.length
+    // let e = chars.length
+    // let f = chars.length
+    // let frames = setInterval(animate)
+    chars.forEach(char1 => {
+      chars.forEach(char2 => {
+        chars.forEach(char3 => {
+          chars.forEach(char4 => {
+            chars.forEach(char5 => {
+              // chars.forEach(char6 => {
+              document.getElementById('output').innerHTML += '<div style="background-color:#' + char1 + char2 + char3 + char4 + char5 + /*char6*/ + ';width: 100px;height:100px;"></div>'
+              // })
+            })
+          })
+        })
+      })
+    })
+    // function animate() {
+    //   if ((a <= chars.length) || (b <= chars.length) || (c <= chars.length) || (d <= chars.length) || (e <= chars.length || (f <= chars.length))) {
+    //     document.getElementById('output').innerHTML += '<div style="background-color:#' + chars[a] + chars[b] + chars[c] + chars[d] + chars[e] + chars[f] + ';width: 100px;height:100px;"></div>'
+    //   } else {
+    //     a, b, c, d, e, f = 0
+    //   }
+    //   a, b, c, d, e, f += 1
+    // }
+  </script>
+</body>
+
+</html>
