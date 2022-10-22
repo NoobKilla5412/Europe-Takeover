@@ -16,9 +16,6 @@ function mouse(e) {
 function insideElement(element) {
   return ((mouseX > element.pos.x) && (mouseX < element.dim.w + element.pos.x)) && (mouseY > element.pos.y) && (mouseY < element.dim.h + element.pos.y)
 }
-function mineMenu(mine) {
-
-}
 function mineClick(mine) {
   if (mine.collectButton.mouseIn) {
     money += mine.money
