@@ -30,8 +30,18 @@ class Troop {
     this.pos.x += this.velocity.x
   }
 }
-
+/**
+ * Enemies class
+ */
 class Enemy {
+  /**
+   * Create enemy
+   * @param {*} x The x-pos
+   * @param {*} y The y-pos
+   * @param {*} vx The x-velocity
+   * @param {*} vy The y-velocity
+   * @param {*} color The color of the enemy
+   */
   constructor(x, y, vx, vy, color) {
     this.speed = 10
     this.pos = {
@@ -60,8 +70,18 @@ class Enemy {
     this.pos.x += this.velocity.x
   }
 }
-
+/**
+ * Draw text to the canvas
+ */
 class CanvasText {
+  /**
+   * Draw text to the canvas
+   * @param {*} x The x-pos
+   * @param {*} y The y-pos
+   * @param {*} size The font-size in px
+   * @param {*} color The font-color
+   * @param {*} content The value of the text
+   */
   constructor(x, y, size, color, content) {
     this.pos = {
       x,
@@ -81,8 +101,20 @@ class CanvasText {
     c.fillText(this.content, this.pos.x, this.pos.y);
   }
 }
-
+/**
+ * Generic rectangle
+ */
 class CanvasElement {
+  /**
+   * 
+   * @param {*} x The x-pos
+   * @param {*} y The y-pos
+   * @param {*} width The width of the element
+   * @param {*} height The height of the element
+   * @param {*} color The color of the element
+   * @param {*} type The type
+   * @param {*} imageSrc The link to the image
+   */
   constructor(x, y, width, height, color, type = 'rect', imageSrc = '') {
     this.pos = {
       x,
@@ -116,6 +148,11 @@ class CanvasElement {
  * Spawn a gold mine
  */
 class GoldMine {
+  /**
+   * @param {*} x The x-pos
+   * @param {*} y The y-pos
+   * @param {*} name Which gold mine is this?
+   */
   constructor(x, y, name) {
     this.pos = {
       x,
@@ -146,7 +183,9 @@ class GoldMine {
     this.upgradeCostText = new CanvasText(90, 290, 15, 'black', '$' + toValues(Math.round(this.cost)))
     this.image = createImage('image/goldMine.png');
   }
-
+  /**
+   * Draw the gold mine to the screen
+   */
   draw() {
     c.fillStyle = this.color
     // c.fillRect(this.pos.x, this.pos.y, this.dim.w, this.dim.h)
@@ -159,7 +198,15 @@ class GoldMine {
     this.text.draw()
   }
 }
+/**
+ * Spawn a gold mine
+ */
 class GoldStorage {
+  /**
+   * @param {*} x The x-pos
+   * @param {*} y The y-pos
+   * @param {*} name Which gold storage is this?
+   */
   constructor(x, y, name) {
     this.pos = {
       x,
@@ -188,7 +235,9 @@ class GoldStorage {
     this.upgradeCostText = new CanvasText(90, 290, 15, 'black', '$' + toValues(Math.round(this.cost)))
     this.image = createImage('image/goldStorage.svg');
   }
-
+  /**
+   * Draw the gold storage to the screen
+   */
   draw() {
     c.fillStyle = this.color
     // c.fillRect(this.pos.x, this.pos.y, this.dim.w, this.dim.h)
@@ -201,8 +250,15 @@ class GoldStorage {
     // this.text.draw()
   }
 }
-
+/**
+ * Spawn a barracks
+ */
 class Barracks {
+  /**
+   * @param {*} x The x-pos
+   * @param {*} y The y-pos
+   * @param {*} name Which barracks is this?
+   */
   constructor(x, y, name) {
     this.pos = {
       x,
@@ -232,7 +288,9 @@ class Barracks {
     this.upgradeCostText = new CanvasText(90, 290, 15, 'black', '$' + toValues(Math.round(this.cost)))
     this.image = createImage('image/barracks.svg')
   }
-
+  /**
+   * Draw the barracks to the screen
+   */
   draw() {
     c.fillStyle = this.color
     // c.fillRect(this.pos.x, this.pos.y, this.dim.w, this.dim.h)
