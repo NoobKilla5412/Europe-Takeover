@@ -1,14 +1,14 @@
-const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d')
+const canvas = document.querySelector('canvas');
+const c = canvas.getContext('2d');
 
-canvas.width = 1024
-canvas.height = 576
+canvas.width = 1024;
+canvas.height = 576;
 
-let money = 0
+let money = 0;
 let totalCapacity = 0;
 
-let mouseX = 0
-let mouseY = 0
+let mouseX = 0;
+let mouseY = 0;
 
 let enemies = []
 let troops = []
