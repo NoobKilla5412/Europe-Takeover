@@ -24,7 +24,6 @@ let barracks = new Barracks(400, 100, 'barracks');
 let things = [goldMine, goldMine1, barracks, goldStorage]
 let attackButton = new CanvasElement(canvas.width - 50, canvas.height - 50, 30, 30, 'red', 'image', 'image/attack.svg')
 
-
 c.fillStyle = '#b5651e'
 c.fillRect(0, 0, canvas.width, canvas.height)
 window.addEventListener('mousemove', mouse, false)
